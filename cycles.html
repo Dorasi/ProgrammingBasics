@@ -1,13 +1,12 @@
 <meta charset="utf-8">
 <script>
-	 var n = 0;
-	 do {
-	 	if ((Math.random() * 6) < 1){
-	 		alert('игра окончена.');
-	 		break;
-	 	}
-	 	n++;
-	 } while (prompt('1 - играем, другое - стоп:'));
+	alert('Начало');
+	 var Sum = parseInt(prompt('Введи сумму вклада:'));
+	 var Per = parseInt(prompt('Процентная ставка, % :'));
+	 var X = parseInt(prompt('Введи срок вклада, лет:'));
 
-	 alert('Раундов сыграно: ' + n);
+	 for(var n = 1; n <= X; n++){
+	 	Sum = Sum + (Sum * Per / 100);
+	 	alert('Прошло ' + n + '  лет, сумма на счету ' + Sum);
+	 }
 </script>
