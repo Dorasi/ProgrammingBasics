@@ -6,7 +6,11 @@
 	var i;
 
 	for( i = 0; i<= rounds; i++){
-		arr.push(Math.round(Math.random()*36));
+		n = Math.round(Math.random()*36);
+		if (n != 0){
+			n = (n%2) *2 - 1;
+		}
+		arr.push(n);
 	}
 	alert(arr);
 
