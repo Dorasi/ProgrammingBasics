@@ -70,5 +70,28 @@
 		}
 	} while(answer == '1');
 
-	alert("Текущая сумма карт у игроков: " + getSum(player));
+	if(getSum(player) < 21){//дилер добирает
+				while (getSum(dealer) < 17){
+					dealer.push(getCard());
+					alert(getStatus());
+				}
+
+				var sumDealer = getSum(dealer);
+				var sumPlayer = getSum(player);
+
+				if (sumDealer == 21){
+					alert('У дилера 21 очко. Выйграл дилер!');
+				} else if (sumDealer > 21){
+					alert('У дилера перебор! Дилер проиграл.');
+				}  else if (sumPlayer == sumDealer){
+					alert('Ничья!');
+				} else if(sumPlayer > sumDealer){
+					alert('Игрок победил!');
+				} else alert('Проигрыш.');
+			}
+			
+
+	alert("Текущая сумма карт у игрока: " + getSum(player) + "   Текущая сумма карт у дилера: " + getSum(dealer));
+	
+
 </script>
